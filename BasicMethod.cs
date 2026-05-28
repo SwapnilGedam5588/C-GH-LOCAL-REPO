@@ -3,6 +3,7 @@
 //using static C_PRACTISE.CopyElementsArray;
 //using static StringsPractise.SwitchStatement;
 using static C_PRACTISE.C_OOPS;
+using static C_PRACTISE.InheritanceDerivedClass;
 
 
 
@@ -384,7 +385,7 @@ AM3.Animalcategory = "Anura";
 Console.WriteLine("Animal Name" + AM2.AnimalName + "Animalcategory" + AM2.Animalcategory);
 
 AM3.Mammals3Characteristics();
-AM3.Displayinfo();*/
+AM3.Displayinfo();
 
 //Constructor practise
 
@@ -406,10 +407,122 @@ Cats cats3 = new Cats("Cat", false, true, 10);
 Console.WriteLine($"Breed of cats is {cats3.Breed} and Category of cat is {cats3.is_indoor}, age of the cate is {cats3.is_neutered}, color of the fur is {cats3.energy_level}");
 
 
+WaterBorn WB = new WaterBorn();
+WB.Name = "Fish" ;
+WB.Category = "Amphibion";
+WB.Age = 25;
+WB.Color = "Yellow";
+Console.WriteLine($"Name of waterborn is {WB.Name} , Category of waterborn is {WB.Category}, age of the waterborn is {WB.Age}, color of the waterborn is {WB.Color}");
+
+WB.Breed = "Water";
+WB.is_indoor = true;
+WB.is_neutered =false;
+WB.energy_level =10 ;
+Console.WriteLine($"Name of waterborn is {WB.Breed} , Category of waterborn is {WB.is_indoor}, age of the waterborn is {WB.is_neutered}, color of the waterborn is {WB.energy_level}");
 
 
+/*In Short
+State → What the object has (data) , Behavior → What the object does (methods) , Identity → Who the object is (unique reference)*/
 
 
+/*//object of a class and object identity
+cars Audi = new cars();
+
+//state of an object
+Audi.CarName = "Audi Q5";
+Audi.CarCategory = "SUV";
+Audi.IsCarLicensed = true;
+Audi.CarAge = 15;
+Console.WriteLine("The care age is: " + Audi.CarAge);
+
+//Behavior of an object
+Audi.DisplayInfo();
+
+//object of a class and object identity
+cars BMW = new cars();
+Audi.CarName = "BMW A5";
+Audi.CarCategory = "SUV";
+Audi.IsCarLicensed = false;
+Audi.CarAge = 5;
+Console.WriteLine("The car age is: " + BMW.CarAge);
+BMW.DisplayInfo();
+
+//Variables
+
+//Value type variables
+
+Variables variable = new Variables();
+Console.WriteLine("The value of x is : ", variable.x);
+Console.WriteLine("The value of y is : ", variable.y);
+Console.WriteLine("The value of c is : ", variable.c);
+Console.WriteLine("The value of z is : ", variable.z);
+Console.WriteLine("The value of text is :",variable.Text);
+
+//Instance variables (non static fields)
+
+Variables instance = new Variables();
+instance.EmployeeID= "EMP001";
+Console.WriteLine("The EmployeeID is : ", instance.EmployeeID);
+instance.EmployeeAge = 25;
+Console.WriteLine("The EmployeeAge is : ", instance.EmployeeAge);
+
+//static variables (class variables)
+Variables.myText = "Yalla!Habibi..";
+Console.WriteLine("The myText is : ", Variables.myText);
+Variables.Age = 35;
+Console.WriteLine("The Age is : ", Variables.Age);
+
+//local variable
+Variables Localv = new Variables();
+Localv.DisplayInfo();
+
+//constructor variable
+
+Variables.Calculate(10,20);
+Console.WriteLine("The result of Calculate method with integer parameters and addition is : " + Variables.Calculate(10, 20));
+Variables.Calculate(10.5f, 20.5f);
+Console.WriteLine("The result of Calculate method with integer parameters and subtraction is : " + Variables.Calculate(10.5f, 20.5f));
+
+
+/*Console.WriteLine("=== Starting Main Method ===\n");
+// First access to SingletonUtility - triggers static constructor
+Console.WriteLine("--- First access: GetInstance() ---");
+
+SingletonUtility obj1 = SingletonUtility.GetInstance();
+Console.WriteLine();
+
+// Second access - static constructor NOT called again
+Console.WriteLine("--- Second access: GetInstance() ---");
+SingletonUtility obj2 = SingletonUtility.GetInstance();
+Console.WriteLine();
+
+// Display static member
+Console.WriteLine("--- DisplayInfo() ---");
+SingletonUtility.DisplayInfo();
+
+Console.WriteLine("\n=== Main Method Completed ===");
+Console.WriteLine("Press any key to exit...");
+Console.ReadKey();
+
+//static constructor
+
+GeekStaticConst geek1 = new GeekStaticConst(10);
+geek1.geek_details("Ram", 10);
+Console.WriteLine(geek1.geek_details("Ram", 10));
+
+GeekStaticConst geek2 = new GeekStaticConst(20);
+geek2.geek_details("Ramesh", 20);
+Console.WriteLine(geek2.geek_details("Ramesh", 20));*/
+
+
+//Private constructor
+
+GeekPrivateConst.count_geeks = 99;
+GeekPrivateConst.geeks_count();
+Console.WriteLine(GeekPrivateConst.geeks_count());
+
+GeekPrivateConst.geeks_count();
+Console.WriteLine(GeekPrivateConst.geeks_count());
 
 
 

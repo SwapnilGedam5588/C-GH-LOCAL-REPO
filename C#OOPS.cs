@@ -248,7 +248,7 @@ namespace C_PRACTISE
 
             }
 
-            static void Main(string[] args) 
+            static void Main(string[] args)
             {
                 Constructor constructor = new Constructor();
 
@@ -257,14 +257,14 @@ namespace C_PRACTISE
                 si.SumOnly();
 
             }
-            
+
         }
 
         //This is by default automatially constructor called. no constructorr is created.
         public class Sumint
         {
-            private int sum1=20;
-            private int sum2=10;
+            private int sum1 = 20;
+            private int sum2 = 10;
             private int sumresult;
 
             public void SumOnly()
@@ -287,11 +287,18 @@ namespace C_PRACTISE
             public bool is_neutered;
             public int energy_level;
 
+            //constructor 
+            public Cats()
+            {
+            }
+
 
             //parameterized constructor
 
             public Cats(string Name, string Category, int Age, string Color)
             {
+                //this. --> points to current object, refers to the current object instance
+
                 this.Name = Name;
                 this.Category = Category;
                 this.Age = Age;
@@ -301,16 +308,205 @@ namespace C_PRACTISE
             //Parameterized constructor with method overloading and different parameters
 
             public Cats(string Breed, bool is_indoor, bool is_neutered, int energy_level)
-            { 
+            {
                 this.Breed = Breed;
                 this.is_indoor = is_indoor;
-               this. is_neutered = is_neutered;
+                this.is_neutered = is_neutered;
                 this.energy_level = energy_level;
             }
 
         }
+
+        //Class & objects
+
+         internal class cars
+         {
+
+            //inside class members
+
+            /*Inside it, you define:
+
+            Data → fields, properties
+            Behavior → methods
+            Initialization → constructors
+            Communication → events*/
+
+
+            //class members 
+
+            public string? CarName; //fields or DATA or Attributes
+
+            public string? CarCategory; //fields or DATA or Attributes
+            public int? CarAge { get; set; } //Properties (Encapusulation)
+
+            public bool IsCarLicensed;//fields or DATA or Attributes
+
+
+            public void carsinfo(string CarName, string CarCategory, bool IsCarLicensed) //constructors
+            { 
+                this.CarName = CarName;
+                this.CarCategory = CarCategory;
+                this.IsCarLicensed = IsCarLicensed;
+
+            }
+
+            public void DisplayInfo() //Methods or Functions or Behaviours
+            {
+                Console.WriteLine("The name of the care is : " + CarName);
+                Console.WriteLine("The Car Category is : " + CarCategory);
+                Console.WriteLine("The Car CarLicensed is : " + IsCarLicensed);
+
+            }
+
+         }
+
+        //Variables
+
+        internal class Variables
+        {
+            //Value type variables. Store actual data directly and in stack memory.Access using creating class object. Declared inside a class 
+
+            public int x = 5;
+            public double y = 5.5;
+            public char c = 'd';
+            public bool z = true;
+            public string Text = "Hello";
+
+            //instance variable (non-static fields).Declared inside a class but outside methods.Access using creating class object and assign value
+
+            public string? EmployeeID;
+            public int EmployeeAge;
+
+            // static variables (class variables). Declared using the static keyword and Accessed using class name
+
+            public static string? myText;
+            public static int? Age;
+
+            //Local variables. Declared inside a method, constructor, or block.Accessible only within that block.Must be initialized before use. called using object name and assign value
+
+            public void DisplayInfo()
+            {
+                int x = 5;
+                int y = 10;
+                int sum = x + y;
+                Console.WriteLine("The sum total is " + sum);
+            
+            }
+
+            //constructor using return type. called using class name and assign value
+
+            public int num1 = 0;
+            public int num2 = 0;
+            public double num3 = 0.0;
+            public double num4 = 0.0;
+
+
+            public static int Calculate(int num1, int num2)
+            {
+                return num1 + num2;
+
+            }
+
+            public static double Calculate(double num3, double num4)
+            {
+                return num3 - num4;
+            }
+
+        }
+
+        //static constructor
+
+        public class GeekStaticConst
+        {
+            //static constructor
+            static GeekStaticConst()
+            {
+                Console.WriteLine("static constructor"); 
+            }
+
+            //Instance parameter constructor
+
+            public GeekStaticConst(int i)
+            {
+                Console.WriteLine("Instance parameter constructor for i is : " + i);
+            }
+
+            //Temporary Method
+
+            public string geek_details(string name, int id)
+            {
+                return "Name is" + name + " id is " + id;
+            
+            }
+        }
+
+        //Private constructor
+
+        public class GeekPrivateConst
+        {
+            //private constructor
+
+            private GeekPrivateConst()
+            {
+                Console.WriteLine("Private constructor");
+            }
+
+            // static field
+            public static int count_geeks;
+
+            //static method and increment static field
+            public static int geeks_count()
+            { 
+                return ++count_geeks;  
+            }
+        }
+
+        public class SingletonUtility
+        {
+            //static field
+            public static int InstanceCount;
+
+            //private field
+            public string message;
+
+            /// Static constructor - executes once when class is first accessed
+
+            static SingletonUtility()
+            {
+                Console.WriteLine("1. Static constructor called (initializing static members)");
+                InstanceCount = 0;
+
+            }
+
+            // Private constructor - prevents external instantiation
+
+            private SingletonUtility()
+            {
+                Console.WriteLine("2. Private constructor called (internal instantiation)");
+                this.message = "Created internally";
+                InstanceCount++;
+            }
+
+            // Public static method to create/get instance (Singleton pattern)
+
+            public static SingletonUtility GetInstance()
+            { 
+                Console.WriteLine("3. GetInstance() method called");
+                return new SingletonUtility(); // Can call private constructor internally
+            }
+
+            // Public static method to display info
+            public static void DisplayInfo()
+            {
+                Console.WriteLine($"4. Instance count: {InstanceCount}");
+            }
+
+        }
+
     }
 }
+
+
 
 
 
